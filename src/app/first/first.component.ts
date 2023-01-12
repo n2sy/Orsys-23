@@ -6,10 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./first.component.css'],
 })
 export class FirstComponent {
-  name: string = 'Vianneys';
+  name: string = 'Nidhal';
   formation = ' Angular';
   color = 'pink';
   hd = false;
+  ageFirst = 20;
 
   clickHander() {
     alert("J'ai été cliqué !");
