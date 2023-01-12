@@ -15,4 +15,8 @@ export class FirstComponent {
   clickHander() {
     alert("J'ai été cliqué !");
   }
+
+  traitementDuParent(msg) {
+    alert(msg);
+  }
 }

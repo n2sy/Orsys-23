@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-second',
@@ -6,6 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./second.component.css'],
 })
 export class SecondComponent {
-  @Input() cl = 'blue';
+  @Input() salih = 'blue';
   @Input() age = 1000;
+  @Output() msgToFirst = new EventEmitter();
+
+  sendMsg() {
+    this.msgToFirst.emit('Message de la part de SecondComponent');
+  }
 }
