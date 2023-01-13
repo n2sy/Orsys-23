@@ -9,9 +9,12 @@ import { CvComponent } from './cv/cv.component';
 import { ListeComponent } from './liste/liste.component';
 import { ItemComponent } from './item/item.component';
 import { DetailsComponent } from './details/details.component';
+import { HomeAccountComponent } from './accounts/home-account/home-account.component';
+import { ListAccountComponent } from './accounts/list-account/list-account.component';
+import { AddAccountComponent } from './accounts/add-account/add-account.component';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, SecondComponent, CvComponent, ListeComponent, ItemComponent, DetailsComponent],
+  declarations: [AppComponent, FirstComponent, SecondComponent, CvComponent, ListeComponent, ItemComponent, DetailsComponent, HomeAccountComponent, ListAccountComponent, AddAccountComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
