@@ -33,6 +33,8 @@ export class ManageServersComponent {
     },
   ];
 
+  // prix = 329;
+
   affecterClass(st) {
     // console.log(st);
 
