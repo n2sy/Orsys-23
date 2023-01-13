@@ -1,1 +1,13 @@
-<p>add-account works!</p>
+<div class="orsys">
+    <label for="">Account Name :</label>
+    <input [(ngModel)]="nameAccount" type="text" class="form-control">
+    <label for="">Account Status :</label>
+    <select [(ngModel)]="statutAccount" class="form-control">
+        <option value=""></option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+        <option value="unknown">Unknown</option>
+    </select>
+
+    <button (click)="sendNewAccount()" class="btn btn-primary">Add</button>
+</div>
