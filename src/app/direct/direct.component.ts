@@ -22,7 +22,7 @@ export class DirectComponent {
       this.class3 = true;
     } else {
       this.class3 = false;
-      this.class2 = true;
+      this.class1 = true;
     }
   }
 }
