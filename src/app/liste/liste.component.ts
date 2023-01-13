@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Candidat } from '../models/candidat';
 
 @Component({
@@ -6,10 +6,12 @@ import { Candidat } from '../models/candidat';
   templateUrl: './liste.component.html',
   styleUrls: ['./liste.component.css'],
 })
-export class ListeComponent implements OnInit {
+export class ListeComponent {
   @Input() allCandidats: Candidat[];
+  cdt1;
   constructor() {}
   ngOnInit(): void {
     console.log(this.allCandidats);
+    this.cdt1 = this.allCandidats[0];
   }
 }
