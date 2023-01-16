@@ -1,20 +1,26 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Candidat } from '../models/candidat';
+import { ListCandidatsService } from '../services/list-candidats.service';
 
 @Component({
   selector: 'app-liste',
   templateUrl: './liste.component.html',
   styleUrls: ['./liste.component.css'],
+  providers: [ListCandidatsService],
 })
 export class ListeComponent {
-  @Input() allCandidats: Candidat[];
+  allCandidats: Candidat[];
   @Output() msgToCv = new EventEmitter();
-  constructor() {}
+  constructor(private listSer: ListCandidatsService) {}
   ngOnInit(): void {
-    console.log(this.allCandidats);
+    this.allCandidats = this.listSer.getAllCandidats();
   }
 
   sendCandToCv(cand) {
     this.msgToCv.emit(cand);
+  }
+
+  showList() {
+    console.log(this.listSer.getAllCandidats());
   }
 }
