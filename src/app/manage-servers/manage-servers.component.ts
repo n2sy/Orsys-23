@@ -32,6 +32,7 @@ export class ManageServersComponent {
       statut: 'stable',
     },
   ];
+  selectedStatut = '';
 
   // prix = 329;
 

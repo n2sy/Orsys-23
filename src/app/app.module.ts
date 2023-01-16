@@ -17,7 +17,9 @@ import { MsWordComponent } from './ms-word/ms-word.component';
 import { ManageServersComponent } from './manage-servers/manage-servers.component';
 import { CustomDirDirective } from './custom-dir.directive';
 import { ShortPipe } from './pipes/short.pipe';
+
 import { NoImagePipe } from './pipes/no-image.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -37,8 +39,10 @@ import { NoImagePipe } from './pipes/no-image.pipe';
     CustomDirDirective,
     ShortPipe,
     NoImagePipe,
+    FilterPipe,
   ],
   imports: [BrowserModule, FormsModule],
+
   providers: [],
   bootstrap: [AppComponent],
 })
