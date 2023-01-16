@@ -36,6 +36,19 @@ export class ManageServersComponent {
 
   // prix = 329;
 
+  changeSelectedStatut(inpValue) {
+    this.selectedStatut = inpValue;
+  }
+
+  addServer() {
+    this.tabServers.push({
+      nom: 'NEW SERVER',
+      type: 'large',
+      date_d: new Date(),
+      statut: 'stable',
+    });
+  }
+
   affecterClass(st) {
     // console.log(st);
 
