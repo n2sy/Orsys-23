@@ -13,6 +13,6 @@ export class DetailsComponent {
 
   ajouterRecrue() {
     this.recueSer.addRecrue(this.selCandidat);
-    console.log(this.recueSer.getAllRecrues());
+    //console.log(this.recueSer.getAllRecrues());
   }
 }

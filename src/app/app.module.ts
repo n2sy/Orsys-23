@@ -22,6 +22,8 @@ import { NoImagePipe } from './pipes/no-image.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FirstService } from './services/first.service';
 import { RecruterComponent } from './recruter/recruter.component';
+import { HomeComponent } from './home/home.component';
+import { ORSYS_ROUTING } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -43,8 +45,9 @@ import { RecruterComponent } from './recruter/recruter.component';
     NoImagePipe,
     FilterPipe,
     RecruterComponent,
+    HomeComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, ORSYS_ROUTING],
 
   providers: [FirstService],
   bootstrap: [AppComponent],
