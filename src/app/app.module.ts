@@ -24,6 +24,7 @@ import { FirstService } from './services/first.service';
 import { RecruterComponent } from './recruter/recruter.component';
 import { HomeComponent } from './home/home.component';
 import { ORSYS_ROUTING } from './app.routing';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ORSYS_ROUTING } from './app.routing';
     FilterPipe,
     RecruterComponent,
     HomeComponent,
+    NavbarComponent,
   ],
   imports: [BrowserModule, FormsModule, ORSYS_ROUTING],
 
