@@ -25,6 +25,7 @@ import { RecruterComponent } from './recruter/recruter.component';
 import { HomeComponent } from './home/home.component';
 import { ORSYS_ROUTING } from './app.routing';
 import { NavbarComponent } from './navbar/navbar.component';
+import { InfosComponent } from './infos/infos.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     RecruterComponent,
     HomeComponent,
     NavbarComponent,
+    InfosComponent,
   ],
   imports: [BrowserModule, FormsModule, ORSYS_ROUTING],
 
