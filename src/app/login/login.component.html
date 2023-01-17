@@ -1,15 +1,42 @@
 <div class="container">
-    <form #f="ngForm">
+    <form #f="ngForm" (ngSubmit)="submitHandler(f)">
         <label for="identifiant">Login</label>
-        <input ngModel type="text" class="form-control" id="identifiant" name="login">
+        <input #inpLogin="ngModel" ngModel required email type="text" class="form-control" id="identifiant"
+            name="login">
+
+        <div *ngIf="!inpLogin.valid && inpLogin.touched" class="alert alert-danger">Ce champ est obligatoire et est une
+            adresse mail</div>
 
         <label for="mdp">Mot de passe</label>
-        <input ngModel name="password" type="text" class="form-control" id="mdp">
+        <input ngModel required minlength="4" name="password" type="text" class="form-control" id="mdp">
 
-        <button type="submit" (click)="submitHandler(f)" class="btn btn-primary">Submit</button>
+
+        <label for="lang">Votre langage préféré</label>
+        <select [ngModel]="defaultLang" name="langage" id="lang" class="form-control">
+            <option value=""></option>
+            <option value="js">Javascript</option>
+            <option value="php">Php</option>
+            <option value="python">Python</option>
+        </select>
+
+        <label for="comment">Commentaire</label>
+        <textarea [(ngModel)]="myComment" class="form-control" name="comment" id="comment" cols="10"
+            rows="4"></textarea>
+
+
+        <label for="gestion">Gestion d'erreurs</label>
+        <input #exp="ngModel" ngModel name="gestion" required minlength="5" pattern="nidhal" type="text"
+            class="form-control" id="gestion">
+        <div *ngIf="exp.invalid" class="alert alert-danger">
+            <p *ngIf="exp.errors['required']">Ce champ est obligatoire</p>
+            <p *ngIf="exp.errors['minlength']">Le nombre minimum de caractères est 5</p>
+            <p *ngIf="exp.errors['pattern']">Le pattern est "nidhal"</p>
+        </div>
+
 
         <pre>
             {{ f.value | json}}
         </pre>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
