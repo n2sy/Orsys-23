@@ -9,7 +9,7 @@ import { InfosComponent } from './infos/infos.component';
 const myRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cv', component: CvComponent },
-  { path: 'cv/:myid', component: InfosComponent },
+  { path: 'cv/:id', component: InfosComponent },
   { path: 'cv/djamel', component: DirectComponent },
   { path: 'servers', component: ManageServersComponent },
   { path: 'ms-word', component: MsWordComponent },
