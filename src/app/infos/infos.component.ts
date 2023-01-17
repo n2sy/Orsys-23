@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ListCandidatsService } from '../services/list-candidats.service';
 
 @Component({
@@ -12,7 +12,8 @@ export class InfosComponent {
   selectCand;
   constructor(
     private activatedRoute: ActivatedRoute,
-    private candSer: ListCandidatsService
+    private candSer: ListCandidatsService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -24,6 +25,7 @@ export class InfosComponent {
     this.activatedRoute.paramMap.subscribe({
       next: (p: ParamMap) => {
         this.selectCand = this.candSer.getCandidatById(p.get('id'));
+        if (!this.selectCand) this.router.navigateByUrl('/not-found');
       },
     });
   }
