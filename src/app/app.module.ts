@@ -26,6 +26,7 @@ import { HomeComponent } from './home/home.component';
 import { ORSYS_ROUTING } from './app.routing';
 import { NavbarComponent } from './navbar/navbar.component';
 import { InfosComponent } from './infos/infos.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { InfosComponent } from './infos/infos.component';
     HomeComponent,
     NavbarComponent,
     InfosComponent,
+    NotFoundComponent,
   ],
   imports: [BrowserModule, FormsModule, ORSYS_ROUTING],
 
