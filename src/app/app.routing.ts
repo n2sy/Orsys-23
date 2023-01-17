@@ -11,28 +11,32 @@ import { UpdateComponent } from './update/update.component';
 
 const myRoutes: Routes = [
   { path: '', component: HomeComponent },
-  {
-    path: 'cv',
-    component: CvComponent,
-    children: [
-      //{ path: '', component: CvComponent },
-      { path: 'add', component: AddComponent },
-      { path: 'djamel', component: DirectComponent },
-      { path: ':id', component: InfosComponent },
-      { path: ':id/edit', component: UpdateComponent },
-    ],
-  },
   // {
   //   path: 'cv',
+  //   component: CvComponent,
   //   children: [
-  //     { path: '', component: CvComponent },
+  //     //{ path: '', component: CvComponent },
   //     { path: 'add', component: AddComponent },
   //     { path: 'djamel', component: DirectComponent },
   //     { path: ':id', component: InfosComponent },
   //     { path: ':id/edit', component: UpdateComponent },
   //   ],
   // },
+  {
+    path: 'cv',
+    children: [
+      { path: '', component: CvComponent },
+      { path: 'add', component: AddComponent },
+      { path: 'djamel', component: DirectComponent },
+      { path: ':id', component: InfosComponent },
+      { path: ':id/edit', component: UpdateComponent },
+    ],
+  },
   { path: 'servers', component: ManageServersComponent },
+  {
+    path: 'manage-serv',
+    loadChildren: () => import('./sub/sub.module').then((m) => m.SubModule),
+  },
   { path: 'ms-word', component: MsWordComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
