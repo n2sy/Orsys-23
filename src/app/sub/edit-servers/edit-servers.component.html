@@ -1,1 +1,11 @@
-<p>edit-servers works!</p>
+<div class="container">
+    <label for="">Nom du serveur</label>
+    <input [(ngModel)]="editedServer.nom" type="text" class="form-control">
+
+    <label for="">Statut du serveur</label>
+    <select [(ngModel)]="editedServer.statut" class="form-control" name="" id="">
+        <option value="online">Online</option>
+        <option value="offline">Offline</option>
+    </select>
+    <button routerLink="/manage-serv" class="btn btn-success">Back To List</button>
+</div>

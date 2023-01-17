@@ -1,1 +1,8 @@
-<p>infos-servers works!</p>
+<div class="container">
+    <h4> {{ clickedServer.nom }} </h4>
+    <hr>
+    <p>Le statut du serveur est {{ clickedServer.statut }} </p>
+    <button [disabled]="disableBtn" class="btn btn-info" routerLink="edit">Editer</button>
+    <br>
+    <i *ngIf="disableBtn">Impossible d'editer ce serveur</i>
+</div>

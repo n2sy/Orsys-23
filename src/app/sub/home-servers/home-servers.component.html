@@ -1,7 +1,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-5">
-            Liste des serveurs
+            <ol class="list-group">
+                <li [routerLink]="[serv.id]" [queryParams]="{'allowEdit' : serv.id == 3 ? '1' : '0'}"
+                    class="list-group-item" *ngFor="let serv of lstServeurs">
+                    {{ serv.nom }}
+                </li>
+            </ol>
         </div>
         <div class="col-md-7">
             <router-outlet></router-outlet>

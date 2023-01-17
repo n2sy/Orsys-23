@@ -4,6 +4,7 @@ import { HomeServersComponent } from './home-servers/home-servers.component';
 import { InfosServersComponent } from './infos-servers/infos-servers.component';
 import { EditServersComponent } from './edit-servers/edit-servers.component';
 import { SUB_ROUTING } from './sub.routing';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,6 @@ import { SUB_ROUTING } from './sub.routing';
     InfosServersComponent,
     EditServersComponent,
   ],
-  imports: [CommonModule, SUB_ROUTING],
+  imports: [CommonModule, FormsModule, SUB_ROUTING],
 })
 export class SubModule {}
