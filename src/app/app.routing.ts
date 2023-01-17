@@ -8,6 +8,7 @@ import { InfosComponent } from './infos/infos.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
+import { LoginComponent } from './login/login.component';
 
 const myRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -38,6 +39,7 @@ const myRoutes: Routes = [
     loadChildren: () => import('./sub/sub.module').then((m) => m.SubModule),
   },
   { path: 'ms-word', component: MsWordComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
 ];

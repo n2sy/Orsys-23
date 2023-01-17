@@ -1,0 +1,15 @@
+<div class="container">
+    <form #f="ngForm">
+        <label for="identifiant">Login</label>
+        <input ngModel type="text" class="form-control" id="identifiant" name="login">
+
+        <label for="mdp">Mot de passe</label>
+        <input ngModel name="password" type="text" class="form-control" id="mdp">
+
+        <button type="submit" (click)="submitHandler(f)" class="btn btn-primary">Submit</button>
+
+        <pre>
+            {{ f.value | json}}
+        </pre>
+    </form>
+</div>
