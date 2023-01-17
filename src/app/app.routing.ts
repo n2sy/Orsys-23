@@ -6,12 +6,32 @@ import { MsWordComponent } from './ms-word/ms-word.component';
 import { DirectComponent } from './direct/direct.component';
 import { InfosComponent } from './infos/infos.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AddComponent } from './add/add.component';
+import { UpdateComponent } from './update/update.component';
 
 const myRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'cv', component: CvComponent },
-  { path: 'cv/:id', component: InfosComponent },
-  { path: 'cv/djamel', component: DirectComponent },
+  {
+    path: 'cv',
+    component: CvComponent,
+    children: [
+      //{ path: '', component: CvComponent },
+      { path: 'add', component: AddComponent },
+      { path: 'djamel', component: DirectComponent },
+      { path: ':id', component: InfosComponent },
+      { path: ':id/edit', component: UpdateComponent },
+    ],
+  },
+  // {
+  //   path: 'cv',
+  //   children: [
+  //     { path: '', component: CvComponent },
+  //     { path: 'add', component: AddComponent },
+  //     { path: 'djamel', component: DirectComponent },
+  //     { path: ':id', component: InfosComponent },
+  //     { path: ':id/edit', component: UpdateComponent },
+  //   ],
+  // },
   { path: 'servers', component: ManageServersComponent },
   { path: 'ms-word', component: MsWordComponent },
   { path: 'not-found', component: NotFoundComponent },

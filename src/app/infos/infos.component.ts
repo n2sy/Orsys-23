@@ -25,7 +25,7 @@ export class InfosComponent {
     this.activatedRoute.paramMap.subscribe({
       next: (p: ParamMap) => {
         this.selectCand = this.candSer.getCandidatById(p.get('id'));
-        if (!this.selectCand) this.router.navigateByUrl('/not-found');
+        //if (!this.selectCand) this.router.navigateByUrl('/not-found');
       },
     });
   }
