@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -30,6 +30,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
 import { LoginComponent } from './login/login.component';
+import { ReactFormComponent } from './react-form/react-form.component';
 
 @NgModule({
   declarations: [
@@ -58,8 +59,9 @@ import { LoginComponent } from './login/login.component';
     AddComponent,
     UpdateComponent,
     LoginComponent,
+    ReactFormComponent,
   ],
-  imports: [BrowserModule, FormsModule, ORSYS_ROUTING],
+  imports: [BrowserModule, FormsModule, ORSYS_ROUTING, ReactiveFormsModule],
 
   providers: [FirstService],
   bootstrap: [AppComponent],

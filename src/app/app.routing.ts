@@ -9,6 +9,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
 import { LoginComponent } from './login/login.component';
+import { ReactFormComponent } from './react-form/react-form.component';
 
 const myRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -40,6 +41,7 @@ const myRoutes: Routes = [
   },
   { path: 'ms-word', component: MsWordComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'react', component: ReactFormComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
 ];

@@ -1,0 +1,11 @@
+<div class="container">
+    <form [formGroup]="signupForm" (ngSubmit)="submitHandler()">
+        <label for="identifiant">Username</label>
+        <input type="text" class="form-control" id="identifiant" formControlName="username">
+
+        <label for="mdp">Adresse Mail</label>
+        <input type="text" class="form-control" id="mdp" formControlName="addemail">
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
