@@ -31,6 +31,7 @@ import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
 import { LoginComponent } from './login/login.component';
 import { ReactFormComponent } from './react-form/react-form.component';
+import { ExpObsComponent } from './exp-obs/exp-obs.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { ReactFormComponent } from './react-form/react-form.component';
     UpdateComponent,
     LoginComponent,
     ReactFormComponent,
+    ExpObsComponent,
   ],
   imports: [BrowserModule, FormsModule, ORSYS_ROUTING, ReactiveFormsModule],
 
