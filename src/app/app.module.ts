@@ -34,6 +34,8 @@ import { ReactFormComponent } from './react-form/react-form.component';
 import { ExpObsComponent } from './exp-obs/exp-obs.component';
 import { HttpClientModule } from '@angular/common/http';
 import { tokenInterceptorProvider } from './access-token.interceptor';
+import { LoginGuard } from './login.guard';
+import { LogoutGuard } from './logout.guard';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,7 @@ import { tokenInterceptorProvider } from './access-token.interceptor';
     HttpClientModule,
   ],
 
-  providers: [FirstService, tokenInterceptorProvider],
+  providers: [FirstService, tokenInterceptorProvider, LoginGuard, LogoutGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

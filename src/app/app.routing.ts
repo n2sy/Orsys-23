@@ -10,6 +10,8 @@ import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
 import { LoginComponent } from './login/login.component';
 import { ReactFormComponent } from './react-form/react-form.component';
+import { LoginGuard } from './login.guard';
+import { LogoutGuard } from './logout.guard';
 
 const myRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,10 +30,14 @@ const myRoutes: Routes = [
     path: 'cv',
     children: [
       { path: '', component: CvComponent },
-      { path: 'add', component: AddComponent },
+      { path: 'add', component: AddComponent, canActivate: [LoginGuard] },
       { path: 'djamel', component: DirectComponent },
       { path: ':id', component: InfosComponent },
-      { path: ':id/edit', component: UpdateComponent },
+      {
+        path: ':id/edit',
+        component: UpdateComponent,
+        canActivate: [LoginGuard],
+      },
     ],
   },
   { path: 'servers', component: ManageServersComponent },
@@ -40,7 +46,7 @@ const myRoutes: Routes = [
     loadChildren: () => import('./sub/sub.module').then((m) => m.SubModule),
   },
   { path: 'ms-word', component: MsWordComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate: [LogoutGuard] },
   { path: 'react', component: ReactFormComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
