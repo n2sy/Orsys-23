@@ -3,8 +3,22 @@
         <label for="identifiant">Username</label>
         <input type="text" class="form-control" id="identifiant" formControlName="username">
 
+
+
         <label for="mdp">Adresse Mail</label>
         <input type="text" class="form-control" id="mdp" formControlName="addemail">
+
+        <div *ngIf="signupForm.get('addemail').invalid && signupForm.get('addemail').touched"
+            class="alert alert-danger">Veuillez saisir une adresse mail valide</div>
+
+        <div formArrayName="skills">
+            <h3>Your Skills</h3>
+            <button class="btn btn-warning" (click)="addSkill()">Add Skill</button>
+            <div class="form-group" *ngFor="let skill of formSkills.controls">
+                <input type="text" class="form-control" [formControl]="$any(skill)">
+            </div>
+
+        </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

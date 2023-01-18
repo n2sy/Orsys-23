@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-react-form',
@@ -12,10 +12,20 @@ export class ReactFormComponent {
     this.signupForm = new FormGroup({
       username: new FormControl(null, Validators.required),
       addemail: new FormControl(null, [Validators.required, Validators.email]),
+      skills: new FormArray([]),
     });
   }
 
   submitHandler() {
     console.log(this.signupForm.value);
+  }
+
+  get formSkills() {
+    return <FormArray>this.signupForm.get('skills');
+  }
+
+  addSkill() {
+    let newCtrl = new FormControl(null, Validators.required);
+    this.formSkills.push(newCtrl);
   }
 }
