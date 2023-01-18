@@ -29,4 +29,11 @@ export class InfosComponent {
       },
     });
   }
+
+  onDelete() {
+    if (confirm('Etes-vous sur de vouloir supprimer ce candidat ?')) {
+      this.candSer.deleteCandidat(this.selectCand.id);
+      this.router.navigateByUrl('/cv');
+    }
+  }
 }
