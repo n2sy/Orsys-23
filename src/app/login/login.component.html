@@ -37,6 +37,9 @@
         <pre>
             {{ f.value | json}}
         </pre>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button [disabled]="f.invalid" type="submit" class="btn btn-primary">Submit</button>
+        <button (click)="generatePwd(f)" class="btn btn-success">Generate Password</button>
+        <button (click)="generatePwdII(f)" class="btn btn-danger">Generate Password II</button>
+        <button (click)="onReset(f)" class="btn btn-info">Reset</button>
     </form>
 </div>
