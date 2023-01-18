@@ -8,11 +8,15 @@ import { ListCandidatsService } from '../services/list-candidats.service';
   styleUrls: ['./liste.component.css'],
 })
 export class ListeComponent {
-  allCandidats: Candidat[];
+  allCandidats;
   @Output() msgToCv = new EventEmitter();
   constructor(private listSer: ListCandidatsService) {}
   ngOnInit(): void {
-    this.allCandidats = this.listSer.getAllCandidats();
+    this.listSer.getAllCandidatsAPI().subscribe({
+      next: (response) => {
+        this.allCandidats = response;
+      },
+    });
   }
 
   sendCandToCv(cand) {

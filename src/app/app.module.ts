@@ -32,6 +32,7 @@ import { UpdateComponent } from './update/update.component';
 import { LoginComponent } from './login/login.component';
 import { ReactFormComponent } from './react-form/react-form.component';
 import { ExpObsComponent } from './exp-obs/exp-obs.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,13 @@ import { ExpObsComponent } from './exp-obs/exp-obs.component';
     ReactFormComponent,
     ExpObsComponent,
   ],
-  imports: [BrowserModule, FormsModule, ORSYS_ROUTING, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ORSYS_ROUTING,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
 
   providers: [FirstService],
   bootstrap: [AppComponent],

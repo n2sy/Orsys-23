@@ -18,13 +18,24 @@ export class UpdateComponent {
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe({
       next: (p: ParamMap) => {
-        this.editedCand = this.candSer.getCandidatById(p.get('id'));
+        this.candSer.getCandidatByIdAPI(p.get('id')).subscribe({
+          next: (response) => {
+            this.editedCand = response;
+          },
+        });
       },
     });
   }
 
   editCandidat() {
-    this.candSer.updateCandidat(this.editedCand);
-    this.router.navigateByUrl('/cv');
+    this.candSer.updateCandidatAPI(this.editedCand).subscribe({
+      next: (response) => {
+        alert(response['message']);
+        this.router.navigateByUrl('/cv');
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 }

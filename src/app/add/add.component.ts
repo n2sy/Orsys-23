@@ -11,7 +11,11 @@ export class AddComponent {
   constructor(private candSer: ListCandidatsService, private router: Router) {}
   addNewCandidat(newC) {
     console.log(newC);
-    this.candSer.addCandidat(newC);
-    this.router.navigateByUrl('/cv');
+    this.candSer.addCandidatAPI(newC).subscribe({
+      next: (response) => {
+        alert(response['message']);
+        this.router.navigateByUrl('/cv');
+      },
+    });
   }
 }

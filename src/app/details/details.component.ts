@@ -8,7 +8,7 @@ import { ListRecruesService } from '../services/list-recrues.service';
   styleUrls: ['./details.component.css'],
 })
 export class DetailsComponent {
-  @Input() selCandidat: Candidat;
+  @Input() selCandidat;
   constructor(private recueSer: ListRecruesService) {}
 
   ajouterRecrue() {
